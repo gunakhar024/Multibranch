@@ -11,5 +11,6 @@ String version=resource.getString("version");%>
  <h3>i am added a new text</h3>
  <h4>now i pratce on s3buckets</h4>
  <h5>added empty one</h5>
+ <h6>added some one</h6>
 </body>
 </html>
