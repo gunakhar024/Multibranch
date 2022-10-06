@@ -3,9 +3,8 @@ pipeline {
    stages {
        stage('Build Code') {
            steps {
-               sh """
+               sh "mvn clean package"
                echo "Building Artifact for project samplewebapp"
-			   """
                
            }
        }
@@ -22,14 +21,15 @@ pipeline {
        }
 
        stage('Deploy Code') {
-	   
+	   when
+       {
+       branch "feature"
+	       }
           steps {
-               sh """
+               sh "mvn tomcat7:deploy"
                echo "Deploying Code"
-			   """
                
           }
       }
       }
       }
-
